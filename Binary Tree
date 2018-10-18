@@ -11,7 +11,7 @@ rjpublic class treefill {
    //goes where the tree is
 		
 	public void insert(int num) { 
-       		root = insertRec(data, num); 
+       		data = addNode(data, num); 
     	} 
       
    	public Node addNode(Node data, int num) { 
