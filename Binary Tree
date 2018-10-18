@@ -1,4 +1,4 @@
-public class treefill {
+rjpublic class treefill {
         
     public static void main(String[] args) {
     	//Node being the assumed name of the class
@@ -9,24 +9,25 @@ public class treefill {
     }
     
    //goes where the tree is
-	public void insert(int num) {
-		if (num < data) {
-			if (left != null) {
-				left.addNode(num);
-			} 
-			else {
-				left = new Node(num);
-			}
-
-		} 
-		else {
-			if (right != null) {
-				right.addNode(num);
-			} 
-			else {
-				right = new Node(num);
-			}
-
+		
+	public void insert(int num) { 
+       		root = insertRec(data, num); 
+    	} 
+      
+   	public Node addNode(Node data, int num) { 
+  
+        	if (data == null) { 
+            	data = new Node(num); 
+            	return data; 
+        	} 
+  
+        	if (num < data.num){
+            		data.left = addNode(data.left, num); 
 		}
-	}//end of insert
+        	else{ 
+            		data.right = addNode(data.right, num); 
+	    	}
+  
+        	return data; 
+    	} 
 }
