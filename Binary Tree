@@ -15,16 +15,13 @@ rjpublic class treefill {
     	} 
       
    	public Node addNode(Node data, int num) { 
-        	if (data == null) { 
-            	data = new Node(num); 
+        	if (data.left == null) { 
+            	data.left = new Node(num); 
             	return data; 
         	} 
   
-        	if (num < data.num){
-            		data.left = addNode(data.left, num); 
-		}
         	else{ 
-            		data.right = addNode(data.right, num); 
+            		data.right = new Node(num); 
 	    	}
   
         	return data; 
